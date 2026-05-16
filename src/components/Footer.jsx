@@ -39,10 +39,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Get In Touch</h4>
             <a
-              href="mailto:hello@greenezine.com"
+              href="mailto:gogreenzine@icloud.com"
               className="text-forest-700 hover:text-forest-800 font-medium text-sm transition-colors"
             >
-              hello@greenezine.com
+              gogreenzine@icloud.com
             </a>
             <p className="text-gray-600 text-sm mt-2">
               Available for partnerships and enquiries

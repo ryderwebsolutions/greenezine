@@ -126,7 +126,7 @@ npm run build
 
 ## Email Setup
 
-The form references `hello@greenezine.com`. To receive emails:
+The form references `gogreenzine@icloud.com`. To receive emails:
 
 1. **Option 1**: Connect to an email service like Mailgun, SendGrid, or Postmark
 2. **Option 2**: Use a form service like Formspree or Basin
@@ -138,4 +138,4 @@ The form references `hello@greenezine.com`. To receive emails:
 
 ## Support
 
-For questions or issues, reach out to hello@greenezine.com
+For questions or issues, reach out to gogreenzine@icloud.com
