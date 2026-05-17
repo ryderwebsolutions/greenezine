@@ -27,7 +27,7 @@ export default function Hero() {
 
         {/* Supporting Text */}
         <p className="text-lg sm:text-xl text-gray-600 text-center mb-12 leading-relaxed max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          We're currently building the new GreenEzine online experience. For partnerships, advertising enquiries, collaborations, or general contact, please reach out below.
+          SUBSCRIBE BELOW
         </p>
 
         {/* Email Signup Section */}
