@@ -18,27 +18,30 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-sage-200 shadow-sm">
+    <nav className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#fbfaf7]/95 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex min-h-[4.75rem] items-center justify-between gap-6 py-3">
           {/* Logo/Brand */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-            <div className="text-2xl font-bold text-sage-700">
-              GREENEZINE
+          <Link to="/" className="flex-shrink-0">
+            <div className="font-serif text-3xl leading-none text-stone-900 sm:text-[2rem]">
+              Greenezine
+            </div>
+            <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-sage-700">
+              Irish sustainability publication
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`border-b pb-1 text-sm font-medium transition-colors ${
                   isActive(item.path)
-                    ? 'text-sage-700 border-b-2 border-sage-600'
-                    : 'text-gray-700 hover:text-sage-700'
-                } pb-1`}
+                    ? 'border-stone-900 text-stone-900'
+                    : 'border-transparent text-stone-600 hover:text-sage-700'
+                }`}
               >
                 {item.label}
               </Link>
@@ -48,7 +51,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             to="/issues/april-2026"
-            className="hidden md:inline-block px-5 py-2 bg-sage-600 text-white rounded-md text-sm font-medium hover:bg-sage-700 transition-colors"
+            className="hidden md:inline-flex items-center rounded-full bg-stone-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-sage-800"
           >
             Read Latest Issue
           </Link>
@@ -56,7 +59,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-sage-700 hover:bg-sage-50 focus:outline-none"
+            className="md:hidden inline-flex items-center justify-center rounded-full border border-stone-200 p-2 text-stone-700 hover:bg-white hover:text-sage-700 focus:outline-none"
           >
             <svg
               className="h-6 w-6"
@@ -83,10 +86,10 @@ export default function Navbar() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block rounded-2xl px-4 py-3 text-base font-medium ${
                     isActive(item.path)
-                      ? 'bg-sage-100 text-sage-700'
-                      : 'text-gray-700 hover:bg-sage-50 hover:text-sage-700'
+                      ? 'bg-white text-stone-900 shadow-sm'
+                      : 'text-stone-700 hover:bg-white hover:text-sage-700'
                   }`}
                 >
                   {item.label}
@@ -95,7 +98,7 @@ export default function Navbar() {
               <Link
                 to="/issues/april-2026"
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md bg-sage-600 text-white font-medium hover:bg-sage-700 mt-2"
+                className="mt-2 block rounded-2xl bg-stone-900 px-4 py-3 font-medium text-white hover:bg-sage-800"
               >
                 Read Latest Issue
               </Link>
