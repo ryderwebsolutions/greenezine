@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function IssueDetail() {
   const { slug } = useParams()
@@ -219,12 +219,12 @@ export default function IssueDetail() {
               <p className="text-gray-600 font-medium">Explore More Issues</p>
             </div>
             <div className="flex gap-4">
-              <a href="/archive" className="px-6 py-3 bg-white border-2 border-sage-200 text-sage-700 font-semibold rounded-lg hover:bg-sage-50 transition-colors">
+              <Link to="/archive" className="px-6 py-3 bg-white border-2 border-sage-200 text-sage-700 font-semibold rounded-lg hover:bg-sage-50 transition-colors">
                 View Archive
-              </a>
-              <a href="/" className="px-6 py-3 bg-sage-600 text-white font-semibold rounded-lg hover:bg-sage-700 transition-colors">
+              </Link>
+              <Link to="/" className="px-6 py-3 bg-sage-600 text-white font-semibold rounded-lg hover:bg-sage-700 transition-colors">
                 Back to Home
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -443,61 +443,6 @@ export default function Advertise() {
           </div>
         </div>
       </section>
-    </>
-  )
-}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-900 mb-2">
-                      Phone (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent"
-                      placeholder="+353 (0)"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">
-                    Tell us about your enquiry
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent resize-none"
-                    placeholder="Describe your advertising interests and goals..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-sage-600 text-white font-semibold rounded-lg hover:bg-sage-700 transition-colors"
-                >
-                  Submit Enquiry
-                </button>
-
-                <p className="text-sm text-gray-600 text-center">
-                  We'll review your enquiry and get back to you within 1-2 business days.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Businesses CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-sage-50 border-t border-sage-200">

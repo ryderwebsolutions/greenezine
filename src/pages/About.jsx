@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import FeaturedStories from '../components/FeaturedStories'
 
 export default function About() {
@@ -195,9 +196,9 @@ export default function About() {
                 Subscribe
               </button>
             </form>
-            <a href="/advertise" className="px-6 py-3 bg-sage-100 text-sage-700 font-semibold rounded-lg hover:bg-sage-200 transition-colors">
+            <Link to="/advertise" className="px-6 py-3 bg-sage-100 text-sage-700 font-semibold rounded-lg hover:bg-sage-200 transition-colors">
               Advertise
-            </a>
+            </Link>
           </div>
         </div>
       </section>

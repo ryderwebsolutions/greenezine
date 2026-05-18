@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import EmailSignup from './EmailSignup'
-import SocialLinks from './SocialLinks'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
@@ -37,27 +35,27 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <a
-            href="/issues/april-2026"
+          <Link
+            to="/issues/april-2026"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-sage-600 to-eco-600 text-white font-semibold rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             Read Latest Edition
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
-          <a
-            href="/archive"
+          </Link>
+          <Link
+            to="/archive"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-600 font-semibold rounded-lg border-2 border-sage-200 hover:border-sage-400 hover:bg-sage-50 transition-all duration-300"
           >
             Browse Archive
-          </a>
-          <a
-            href="/advertise"
+          </Link>
+          <Link
+            to="/advertise"
             className="inline-flex items-center justify-center px-8 py-4 bg-sage-100 text-sage-700 font-semibold rounded-lg hover:bg-sage-200 transition-colors"
           >
             Advertise
-          </a>
+          </Link>
         </div>
 
         {/* Trust Signal */}
