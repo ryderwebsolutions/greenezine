@@ -1,14 +1,11 @@
 import { useState } from 'react'
 
-const INSTAGRAM_URL = '[ADD INSTAGRAM URL HERE]'
-const CONTACT_EMAIL = '[ADD GREENEZINE EMAIL HERE]'
+const INSTAGRAM_URL = 'https://www.instagram.com/greenzineireland/'
+const CONTACT_EMAIL = 'gogreenezine@icloud.com'
 
 export default function ComingSoon() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
-
-  const isEmailConfigured = CONTACT_EMAIL.includes('@')
-  const isInstagramConfigured = INSTAGRAM_URL.startsWith('http')
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -33,8 +30,8 @@ export default function ComingSoon() {
             Website Coming Soon
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">
-            We're currently building the new Greenezine digital publication experience. Subscribe below or contact us for enquiries.
+          <p className="mx-auto mt-7 max-w-xl text-base leading-8 text-stone-600 sm:text-lg">
+            Subscribe below or contact us for enquiries.
           </p>
 
           <form onSubmit={handleSubmit} className="mx-auto mt-10 flex max-w-2xl flex-col gap-3 sm:flex-row">
@@ -62,24 +59,19 @@ export default function ComingSoon() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={isInstagramConfigured ? INSTAGRAM_URL : '#'}
+              href={INSTAGRAM_URL}
               target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-w-[170px] items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition hover:border-sage-400 hover:text-sage-700"
+              rel="noopener noreferrer"
+              className="inline-flex min-w-[170px] items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-sage-400 hover:text-sage-700 hover:shadow-md"
             >
               Instagram
             </a>
             <a
-              href={isEmailConfigured ? `mailto:${CONTACT_EMAIL}` : '#'}
-              className="inline-flex min-w-[170px] items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition hover:border-sage-400 hover:text-sage-700"
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex min-w-[170px] items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-sage-400 hover:text-sage-700 hover:shadow-md"
             >
               Email Us
             </a>
-          </div>
-
-          <div className="mt-8 text-xs text-stone-500">
-            <p>Instagram: {INSTAGRAM_URL}</p>
-            <p>Email: {CONTACT_EMAIL}</p>
           </div>
         </div>
       </div>
