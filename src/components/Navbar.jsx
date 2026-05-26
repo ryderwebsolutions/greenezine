@@ -25,12 +25,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex min-h-[4.75rem] items-center justify-between gap-6 py-3">
           {/* Logo/Brand */}
-          <Link to="/" className="flex-shrink-0">
-            <div className="font-serif text-3xl leading-none text-stone-900 sm:text-[2rem]">
-              Greenezine
-            </div>
-            <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-sage-700">
-              Irish sustainability publication
+          <Link to="/" className="flex flex-shrink-0 items-center gap-3">
+            <img
+              src="/greenzinelogo.jpg"
+              alt="Greenezine logo"
+              className="h-11 w-11 rounded-full border border-stone-200 object-cover"
+              loading="eager"
+              decoding="async"
+            />
+            <div>
+              <div className="font-serif text-3xl leading-none text-stone-900 sm:text-[2rem]">
+                Greenezine
+              </div>
+              <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-sage-700">
+                Irish sustainability publication
+              </div>
             </div>
           </Link>
 
