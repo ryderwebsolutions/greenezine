@@ -20,6 +20,13 @@ export default function Navbar() {
     setIsOpen(false)
   }, [location.pathname])
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
   return (
     <nav className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#fbfaf7]/95 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +78,9 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             className="md:hidden inline-flex items-center justify-center rounded-full border border-stone-200 p-2 text-stone-700 hover:bg-white hover:text-sage-700 focus:outline-none"
           >
             <svg
@@ -91,31 +101,53 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 animate-slide-down">
-            <div className="space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
+          <>
+            <button
+              aria-label="Close mobile menu backdrop"
+              className="fixed inset-0 z-30 bg-stone-900/30 backdrop-blur-[1px] md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+
+            <div id="mobile-nav" className="fixed inset-x-4 top-[5.2rem] z-40 rounded-3xl border border-stone-200/90 bg-[#fbfaf7] p-4 shadow-[0_28px_60px_-36px_rgba(22,34,30,0.65)] md:hidden animate-slide-down">
+              <div className="mb-3 flex items-center justify-between border-b border-stone-200 pb-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage-700">Navigation</p>
+                <button
                   onClick={() => setIsOpen(false)}
-                  className={`block rounded-2xl px-4 py-3 text-base font-medium ${
-                    isActive(item.path)
-                      ? 'bg-white text-stone-900 shadow-sm'
-                      : 'text-stone-700 hover:bg-white hover:text-sage-700'
-                  }`}
+                  aria-label="Close navigation menu"
+                  className="inline-flex items-center justify-center rounded-full border border-stone-200 bg-white p-2 text-stone-600 hover:text-sage-700"
                 >
-                  {item.label}
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <div className="space-y-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block rounded-2xl px-4 py-3 text-base font-medium ${
+                      isActive(item.path)
+                        ? 'bg-white text-stone-900 shadow-sm ring-1 ring-stone-200'
+                        : 'text-stone-700 hover:bg-white hover:text-sage-700'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+
+                <Link
+                  to="/issues/april-2026"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-2 block rounded-2xl bg-stone-900 px-4 py-3 text-center font-medium text-white hover:bg-sage-800"
+                >
+                  Read Latest Issue
                 </Link>
-              ))}
-              <Link
-                to="/issues/april-2026"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 block rounded-2xl bg-stone-900 px-4 py-3 font-medium text-white hover:bg-sage-800"
-              >
-                Read Latest Issue
-              </Link>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
