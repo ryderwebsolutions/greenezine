@@ -14,11 +14,11 @@ const Contact = lazy(() => import('./pages/Contact'))
 
 function AppShell() {
   const location = useLocation()
-  const isComingSoonHomepage = location.pathname === '/'
+  const isStandaloneLanding = location.pathname === '/coming-soon'
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {!isComingSoonHomepage && <Navbar />}
+      {!isStandaloneLanding && <Navbar />}
 
       <main className="flex-1">
         <Suspense
@@ -33,7 +33,8 @@ function AppShell() {
           }
         >
           <Routes>
-            <Route path="/" element={<ComingSoon />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
 
             {/* Preserved full website routes */}
             <Route path="/preview/home" element={<Home />} />
@@ -47,7 +48,7 @@ function AppShell() {
         </Suspense>
       </main>
 
-      {!isComingSoonHomepage && <Footer />}
+      {!isStandaloneLanding && <Footer />}
     </div>
   )
 }

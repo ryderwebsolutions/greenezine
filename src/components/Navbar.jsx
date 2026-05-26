@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
@@ -9,13 +9,16 @@ export default function Navbar() {
     { label: 'Home', path: '/' },
     { label: 'Latest Edition', path: '/issues/april-2026' },
     { label: 'Archive', path: '/archive' },
-    { label: 'Featured Businesses', path: '/featured-businesses' },
     { label: 'About', path: '/about' },
     { label: 'Advertise', path: '/advertise' },
     { label: 'Contact', path: '/contact' },
   ]
 
   const isActive = (path) => location.pathname === path
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.pathname])
 
   return (
     <nav className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#fbfaf7]/95 backdrop-blur-xl">

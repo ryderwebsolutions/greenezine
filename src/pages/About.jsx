@@ -1,204 +1,110 @@
 import { Link } from 'react-router-dom'
-import FeaturedStories from '../components/FeaturedStories'
+
+const coverage = [
+  {
+    title: 'Sustainability and climate progress',
+    description:
+      'Reporting on practical environmental change, policy movement, and measurable impact across Irish communities and sectors.',
+  },
+  {
+    title: 'Innovation and energy',
+    description:
+      'Coverage of renewable energy, low-carbon systems, and Irish innovation shaping a more resilient economy.',
+  },
+  {
+    title: 'Business and leadership',
+    description:
+      'Profiles, interviews, and analysis focused on organizations building credible sustainability strategies.',
+  },
+  {
+    title: 'Built environment and modern living',
+    description:
+      'Editorial features on greener construction, design, and day-to-day decisions that improve long-term outcomes.',
+  },
+]
+
+const values = [
+  {
+    title: 'Clarity',
+    text: 'Clear editorial framing without noise, overstatement, or trend-driven formatting.',
+  },
+  {
+    title: 'Credibility',
+    text: 'Publication standards designed to build trust with readers, partners, and advertisers.',
+  },
+  {
+    title: 'Consistency',
+    text: 'A monthly release rhythm and platform experience that feels stable and established.',
+  },
+]
 
 export default function About() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-sage-50 via-white to-eco-50 border-b border-sage-100">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-sage-100 rounded-full blur-3xl opacity-10"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center relative">
-          <div className="inline-block px-3 py-1 bg-sage-100 rounded-full mb-6">
-            <span className="text-sage-700 text-xs font-bold tracking-widest">ABOUT US</span>
-          </div>
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Ireland's Premium
-            <br />
-            <span className="bg-gradient-to-r from-sage-600 to-eco-600 bg-clip-text text-transparent">
-              Sustainability Publication
-            </span>
+      <section className="border-b border-stone-200 bg-[linear-gradient(180deg,#f7f2e8_0%,#fcfaf6_100%)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="editorial-eyebrow">About Greenezine</p>
+          <h1 className="mt-6 text-5xl leading-[0.95] text-stone-900 sm:text-6xl">
+            A modern Irish publication focused on sustainability.
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
-            Greenezine is a curated digital publication dedicated to sustainability, environmental innovation, and the business leaders reshaping Ireland for a greener future.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-stone-600 sm:text-xl">
+            Greenezine publishes monthly digital editions exploring sustainability, innovation, energy, and business progress across Ireland.
           </p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Mission */}
-            <div className="lg:col-span-2">
-              <div className="mb-12">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                  We publish premium editorial content that celebrates Ireland's sustainability leaders, environmental innovators, and eco-conscious businesses driving meaningful change.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Through carefully curated stories, industry insights, and featured business profiles, Greenezine amplifies the voices shaping Ireland's transition to a sustainable, green economy.
-                </p>
-              </div>
-
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">What We Cover</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="p-6 bg-sage-50 rounded-lg border border-sage-200 hover:border-sage-300 transition-colors">
-                    <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                      <span className="text-2xl">♻️</span>
-                      Sustainable Business
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Corporate sustainability initiatives, green business models, and eco-conscious companies leading the way.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-eco-50 rounded-lg border border-eco-200 hover:border-eco-300 transition-colors">
-                    <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                      <span className="text-2xl">⚡</span>
-                      Renewable Energy
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Green energy solutions, solar, wind, and renewable infrastructure transforming Ireland.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-sage-50 rounded-lg border border-sage-200 hover:border-sage-300 transition-colors">
-                    <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                      <span className="text-2xl">🌱</span>
-                      Innovation & Tech
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Green technology, climate innovation, and startups solving environmental challenges.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-eco-50 rounded-lg border border-eco-200 hover:border-eco-300 transition-colors">
-                    <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                      <span className="text-2xl">🏗️</span>
-                      Green Construction
-                    </h4>
-                    <p className="text-gray-700 text-sm">
-                      Sustainable building, eco-architecture, and green development projects.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-8">
-                <div className="p-6 bg-sage-50 rounded-xl border border-sage-200">
-                  <div className="text-4xl font-bold text-sage-600 mb-2">50+</div>
-                  <p className="text-gray-700 font-semibold">Featured Brands</p>
-                  <p className="text-sm text-gray-600 mt-2">Sustainability leaders across Ireland</p>
-                </div>
-
-                <div className="p-6 bg-eco-50 rounded-xl border border-eco-200">
-                  <div className="text-4xl font-bold text-eco-600 mb-2">4+</div>
-                  <p className="text-gray-700 font-semibold">Monthly Editions</p>
-                  <p className="text-sm text-gray-600 mt-2">Premium digital publications</p>
-                </div>
-
-                <div className="p-6 bg-sage-50 rounded-xl border border-sage-200">
-                  <div className="text-4xl font-bold text-sage-600 mb-2">100+</div>
-                  <p className="text-gray-700 font-semibold">Editorial Stories</p>
-                  <p className="text-sm text-gray-600 mt-2">Curated sustainability content</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-sage-50 border-y border-sage-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We're committed to editorial excellence, sustainability advocacy, and supporting Ireland's green economy.
+      <section className="bg-white px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.1fr)_22rem]">
+          <div>
+            <h2 className="text-4xl text-stone-900 sm:text-5xl">Editorial mission</h2>
+            <p className="mt-5 text-base leading-8 text-stone-600 sm:text-lg">
+              We publish reporting and curated issue content that helps readers understand real sustainability progress in Ireland.
+              The objective is simple: useful editorial structure, strong visual clarity, and trustworthy publication standards.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-8 bg-white rounded-lg border border-sage-100 hover:border-sage-300 transition-colors">
-              <div className="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Curated</h3>
-              <p className="text-gray-600 text-sm">Premium, hand-selected editorial content focused on quality over quantity.</p>
-            </div>
+          <aside className="rounded-[1.3rem] border border-stone-200 bg-[#f8f4ec] p-6 shadow-sm">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sage-700">Publication format</p>
+            <ul className="mt-4 space-y-3 text-sm text-stone-600">
+              <li>Monthly digital editions</li>
+              <li>Issue-first editorial structure</li>
+              <li>Consistent mobile and desktop reading</li>
+              <li>Irish sustainability focus</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
 
-            <div className="p-8 bg-white rounded-lg border border-sage-100 hover:border-sage-300 transition-colors">
-              <div className="w-12 h-12 bg-eco-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-eco-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Authoritative</h3>
-              <p className="text-gray-600 text-sm">In-depth research and expertise establishing Greenezine as Ireland's sustainability media authority.</p>
-            </div>
-
-            <div className="p-8 bg-white rounded-lg border border-sage-100 hover:border-sage-300 transition-colors">
-              <div className="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Impactful</h3>
-              <p className="text-gray-600 text-sm">Amplifying voices driving meaningful environmental and business transformation.</p>
-            </div>
-
-            <div className="p-8 bg-white rounded-lg border border-sage-100 hover:border-sage-300 transition-colors">
-              <div className="w-12 h-12 bg-eco-100 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-eco-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.172l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Independent</h3>
-              <p className="text-gray-600 text-sm">Editorially independent, focused on truth and advancing sustainability conversations.</p>
-            </div>
+      <section className="border-y border-stone-200 bg-[#fbf9f4] px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl text-stone-900 sm:text-5xl">What we cover</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {coverage.map((item) => (
+              <article key={item.title} className="rounded-[1.2rem] border border-stone-200 bg-white p-6 shadow-sm">
+                <h3 className="text-2xl leading-tight text-stone-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-stone-600 sm:text-base">{item.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Stories */}
-      <FeaturedStories />
+      <section className="bg-white px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl text-stone-900 sm:text-5xl">Editorial values</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {values.map((item) => (
+              <article key={item.title} className="rounded-[1.2rem] border border-stone-200 bg-white p-6 shadow-sm">
+                <h3 className="text-2xl text-stone-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-stone-600 sm:text-base">{item.text}</p>
+              </article>
+            ))}
+          </div>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Be Part of Ireland's Sustainability Movement
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Subscribe to Greenezine for monthly premium editions and exclusive sustainability insights.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <form onSubmit={(e) => e.preventDefault()} className="flex gap-2 flex-1 max-w-md">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                required
-                className="flex-1 px-4 py-3 rounded-lg border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-600 focus:border-transparent"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-sage-600 text-white font-semibold rounded-lg hover:bg-sage-700 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-            <Link to="/advertise" className="px-6 py-3 bg-sage-100 text-sage-700 font-semibold rounded-lg hover:bg-sage-200 transition-colors">
-              Advertise
-            </Link>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link to="/archive" className="btn-primary">Browse archive</Link>
+            <Link to="/advertise" className="btn-outline">Advertising partnerships</Link>
+            <Link to="/contact" className="btn-outline">Contact editorial team</Link>
           </div>
         </div>
       </section>

@@ -38,11 +38,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-stone-900 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out hover:bg-sage-800 hover:shadow-lg active:scale-95;
+    @apply inline-flex items-center justify-center rounded-full bg-stone-900 px-7 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-sage-800;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition-all duration-300 hover:border-sage-400 hover:text-sage-800;
+    @apply inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-700 transition-colors duration-200 hover:border-sage-400 hover:text-sage-800;
   }
 
   .section-fade {
@@ -73,6 +73,7 @@
 }
 
 /* Smooth transitions */
-* {
-  @apply transition-colors duration-300;
+*:focus-visible {
+  outline: 2px solid #5a9478;
+  outline-offset: 2px;
 }

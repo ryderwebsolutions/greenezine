@@ -1,162 +1,72 @@
 import { Link } from 'react-router-dom'
+import { issues } from '../data/issues'
+
+function ArchiveCard({ issue }) {
+  return (
+    <Link to={`/issues/${issue.slug}`} className="group block h-full" aria-label={`Open ${issue.title}`}>
+      <article className="h-full overflow-hidden rounded-[1.5rem] border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-[0_26px_55px_-38px_rgba(33,45,39,0.48)]">
+        <div className="grid md:grid-cols-[12rem_minmax(0,1fr)]">
+          <div className="relative aspect-[3/4] bg-[#f3eee3] md:aspect-auto">
+            {issue.coverType === 'image' ? (
+              <img
+                src={issue.coverSrc}
+                alt={`${issue.title} cover`}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <iframe
+                src={issue.coverSrc}
+                title={`${issue.title} cover preview`}
+                loading="lazy"
+                className="h-full w-full border-0 pointer-events-none"
+              />
+            )}
+          </div>
+
+          <div className="flex flex-col justify-between p-6 sm:p-7">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sage-700">{issue.month} {issue.year}</p>
+              <h2 className="mt-2 text-3xl leading-tight text-stone-900 sm:text-4xl">{issue.title}</h2>
+              <p className="mt-2 text-sm font-medium text-stone-500">{issue.subtitle}</p>
+              <p className="mt-4 text-sm leading-7 text-stone-600 sm:text-base">{issue.description}</p>
+            </div>
+
+            <div className="mt-6 flex items-center justify-between text-sm">
+              <span className="text-stone-500">{issue.readTime} read</span>
+              <span className="font-medium text-sage-700">Read issue</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </Link>
+  )
+}
 
 export default function Archive() {
-  const allIssues = [
-    {
-      slug: 'april-2026',
-      title: 'April 2026 Edition',
-      subtitle: 'Sustainability Innovation & Green Business Leadership',
-      description: 'Latest issue featuring innovation in sustainable business, eco-conscious startups, and Ireland\'s green economy.',
-      month: 'April',
-      year: 2026,
-      featured: true,
-      readTime: '25 min',
-    },
-    {
-      slug: 'march-2026',
-      title: 'March 2026 Edition',
-      subtitle: 'Community Initiatives & Environmental Conservation',
-      description: 'Explore stories on sustainable living, environmental conservation, and green community initiatives.',
-      month: 'March',
-      year: 2026,
-      readTime: '22 min',
-    },
-    {
-      slug: 'february-2026',
-      title: 'February 2026 Edition',
-      subtitle: 'Green Business & Renewable Energy Solutions',
-      description: 'Discover green business innovations, corporate sustainability, and renewable energy solutions.',
-      month: 'February',
-      year: 2026,
-      readTime: '24 min',
-    },
-    {
-      slug: 'january-2026',
-      title: 'January 2026 Edition',
-      subtitle: 'Ireland\'s Sustainability Leaders & Innovators',
-      description: 'Our launch edition featuring Ireland\'s sustainability leaders, eco-entrepreneurs, and environmental voices.',
-      month: 'January',
-      year: 2026,
-      readTime: '26 min',
-    },
-  ]
-
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 px-4 sm:px-6 sm:py-20 lg:px-8 lg:py-24 bg-[linear-gradient(180deg,#f7f3eb_0%,#fbfaf7_60%,#eef3ef_100%)] border-b border-stone-200">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/70 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto text-center relative">
-          <div className="editorial-eyebrow mb-6">Magazine collection</div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl text-stone-900 mb-4">
-            Issue Archive
-          </h1>
-          <p className="text-xl text-stone-600 max-w-2xl mx-auto leading-8">
-            Browse Greenezine's growing library of collectible digital editions, each framed like a premium monthly release.
+      <section className="border-b border-stone-200 bg-[linear-gradient(180deg,#f7f2e8_0%,#fbfaf6_100%)] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="editorial-eyebrow">Publication archive</p>
+          <h1 className="mt-6 text-5xl text-stone-900 sm:text-6xl">Issue Archive</h1>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-stone-600">
+            A monthly collection of Greenezine editions, designed as a consistent digital reading experience across desktop and mobile.
           </p>
         </div>
       </section>
 
-      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white/70 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto grid gap-4 text-sm text-stone-600 md:grid-cols-3">
-          <div className="rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-sm">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage-700">Monthly editions</div>
-            <p className="mt-2">Premium digital reading experience</p>
-          </div>
-          <div className="rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-sm">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage-700">Editorial themes</div>
-            <p className="mt-2">Each issue carries a clear publication focus</p>
-          </div>
-          <div className="rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-sm">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage-700">Business platform</div>
-            <p className="mt-2">Featured Irish brands and advertiser visibility</p>
-          </div>
+      <section className="bg-[#fbf9f4] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="mx-auto max-w-7xl space-y-6">
+          {issues.map((issue) => (
+            <ArchiveCard key={issue.slug} issue={issue} />
+          ))}
         </div>
-      </section>
 
-      {/* Archive Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#fbfaf7] lg:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid gap-8 lg:grid-cols-2">
-            {allIssues.map((issue, index) => (
-              <Link
-                key={issue.slug}
-                to={`/issues/${issue.slug}`}
-                className="group animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <article className="grid h-full overflow-hidden rounded-[1.8rem] border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-[0_30px_70px_-40px_rgba(33,45,39,0.35)] md:grid-cols-[15rem_minmax(0,1fr)]">
-                  <div className="relative overflow-hidden bg-[linear-gradient(180deg,#faf7f0_0%,#e9f0eb_100%)] p-6">
-                    <div className="flex h-full flex-col rounded-[1.4rem] border border-white/80 bg-white/80 p-6 shadow-sm">
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700">{issue.featured ? 'Featured edition' : 'Editorial release'}</div>
-                      <div className="mt-auto pt-10 text-6xl font-semibold tracking-[-0.06em] text-stone-900">{issue.month.substring(0, 3).toUpperCase()}</div>
-                      <div className="mt-1 font-serif text-3xl text-stone-500">{issue.year}</div>
-                    </div>
-                    {issue.featured && (
-                      <div className="absolute top-4 left-4 rounded-full bg-stone-900 text-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] shadow-lg">
-                        Latest Edition
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex-1 p-8 flex flex-col justify-between">
-                    <div>
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700">{issue.month} {issue.year}</div>
-                      <h2 className="text-4xl text-stone-900 mt-3 mb-2 leading-tight">
-                        {issue.title}
-                      </h2>
-                      <p className="text-stone-500 font-medium text-sm mb-4">
-                        {issue.subtitle}
-                      </p>
-                      <p className="text-stone-600 text-base leading-8 mb-4 max-w-2xl">
-                        {issue.description}
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between mt-8">
-                      <div className="flex items-center gap-4 text-sm text-stone-500">
-                        <span>{issue.readTime} read</span>
-                        <span className="h-1 w-1 rounded-full bg-stone-300"></span>
-                        <span>Collectible digital edition</span>
-                      </div>
-                      <div className="inline-flex items-center rounded-full border border-stone-300 px-5 py-3 text-sm font-medium text-stone-700 transition group-hover:border-sage-400 group-hover:text-sage-700">
-                        Read Edition
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-[#f4efe6] py-16 px-4 sm:px-6 lg:px-8 border-t border-stone-200">
-        <div className="max-w-4xl mx-auto text-center rounded-[2rem] border border-white/80 bg-white/85 p-8 shadow-sm sm:p-12">
-          <h2 className="text-4xl text-stone-900 mb-4 sm:text-5xl">
-            Stay Updated with Every Issue
-          </h2>
-          <p className="text-lg text-stone-600 mb-8 leading-8">
-            Subscribe to get monthly digital editions delivered to your inbox.
-          </p>
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              required
-              className="flex-1 px-5 py-4 rounded-full border border-stone-300 bg-[#fbfaf7] focus:outline-none focus:ring-2 focus:ring-sage-600"
-            />
-            <button
-              type="submit"
-              className="btn-primary"
-            >
-              Subscribe
-            </button>
-          </form>
+        <div className="mx-auto mt-10 max-w-7xl text-center">
+          <Link to="/issues/april-2026" className="btn-primary">
+            Read Latest Issue
+          </Link>
         </div>
       </section>
     </>
