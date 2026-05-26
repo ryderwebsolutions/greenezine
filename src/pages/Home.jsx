@@ -37,8 +37,8 @@ function IssueCard({ issue }) {
 
         <div className="flex flex-1 flex-col px-5 py-5">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sage-700">{issue.month} {issue.year}</p>
-          <h3 className="mt-2 text-2xl leading-tight text-stone-900">{issue.title}</h3>
-          <p className="mt-2 text-sm text-stone-600">{issue.subtitle}</p>
+          <h3 className="mt-2 h-[4.2rem] overflow-hidden text-2xl leading-tight text-stone-900">{issue.title}</h3>
+          <p className="mt-2 h-[2.8rem] overflow-hidden text-sm leading-6 text-stone-600">{issue.subtitle}</p>
           <div className="mt-4 flex items-center justify-between text-sm">
             <span className="text-stone-500">{issue.readTime} read</span>
             <span className="font-medium text-sage-700">Open issue</span>
