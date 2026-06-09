@@ -60,8 +60,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                      <a href="mailto:gogreenzine@icloud.com" className="text-sage-600 hover:text-sage-700 font-medium">
-                        gogreenzine@icloud.com
+                      <a href="mailto:info@greenezine.com" className="text-sage-600 hover:text-sage-700 font-medium">
+                        info@greenezine.com
                       </a>
                       <p className="text-gray-600 text-sm mt-1">We respond within 24-48 hours</p>
                     </div>

@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Hero() {
+  const [email, setEmail] = useState('')
+
+  const handleGetInTouch = (e) => {
+    e.preventDefault()
+    const body = email
+      ? `Hi Greenezine team,\n\nI'd love to get in touch. You can reach me at: ${email}`
+      : 'Hi Greenezine team,'
+    window.location.href = `mailto:info@greenezine.com?subject=Get in Touch&body=${encodeURIComponent(body)}`
+  }
+
   return (
     <div className="flex-1 flex items-center justify-center px-4 py-12 md:py-20">
       {/* Subtle background elements */}
@@ -61,6 +72,26 @@ export default function Hero() {
         {/* Trust Signal */}
         <div className="text-center text-sm text-gray-600 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <p>✓ Trusted by Ireland's Leading Sustainable Businesses</p>
+        </div>
+
+        {/* Get in Touch CTA */}
+        <div className="mt-10 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <p className="text-center text-sm font-semibold uppercase tracking-widest text-sage-600 mb-3">Get in Touch</p>
+          <form onSubmit={handleGetInTouch} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg border border-sage-200 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-all text-sm"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-gradient-to-r from-sage-600 to-eco-600 text-white font-semibold rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap"
+            >
+              Get in Touch
+            </button>
+          </form>
         </div>
       </div>
     </div>

@@ -33,8 +33,8 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">Contact</h4>
             <div className="mt-5 space-y-3 text-sm">
-              <a href="mailto:gogreenzine@icloud.com" className="block font-medium text-sage-700 hover:text-sage-800">
-                gogreenzine@icloud.com
+              <a href="mailto:info@greenezine.com" className="block font-medium text-sage-700 hover:text-sage-800">
+                info@greenezine.com
               </a>
               <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="block text-stone-700 hover:text-sage-700">
                 Instagram

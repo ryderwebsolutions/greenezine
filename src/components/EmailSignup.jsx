@@ -94,10 +94,10 @@ export default function EmailSignup() {
       <div className="text-center text-gray-600 text-sm">
         <span>or email us directly at </span>
         <a
-          href="mailto:gogreenzine@icloud.com"
+          href="mailto:info@greenezine.com"
           className="text-forest-700 hover:text-forest-800 font-semibold transition-colors"
         >
-          gogreenzine@icloud.com
+          info@greenezine.com
         </a>
       </div>
     </div>
