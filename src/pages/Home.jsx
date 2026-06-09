@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { INSTAGRAM_URL, issues } from '../data/issues'
 
@@ -50,6 +51,19 @@ function IssueCard({ issue }) {
 }
 
 export default function Home() {
+  const [formOpen, setFormOpen] = useState(false)
+  const [email, setEmail] = useState('')
+  const [invalid, setInvalid] = useState(false)
+
+  const handleSend = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email.trim())) { setInvalid(true); return }
+    setInvalid(false)
+    const subject = encodeURIComponent('Greenezine Enquiry')
+    const body = encodeURIComponent('My email address: ' + email.trim())
+    window.location.href = `mailto:info@greenezine.com?subject=${subject}&body=${body}`
+  }
+
   return (
     <>
       <section className="relative overflow-hidden border-b border-stone-200 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
@@ -73,9 +87,54 @@ export default function Home() {
                 <Link to="/issues/april-2026" className="btn-primary">
                   Read Latest Issue
                 </Link>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="btn-outline">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-[#111] text-white text-xs font-medium tracking-[0.1em] uppercase rounded-sm shadow-[0_2px_20px_rgba(0,0,0,0.13)] hover:bg-[#1a1a1a] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200">
+                  <svg className="w-[15px] h-[15px] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
                   Follow On Instagram
                 </a>
+                <button
+                  onClick={() => setFormOpen(o => !o)}
+                  aria-expanded={formOpen}
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-transparent text-stone-900 text-xs font-medium tracking-[0.1em] uppercase rounded-sm border border-stone-900/25 hover:bg-stone-900/[0.04] hover:border-stone-900/40 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <svg className="w-[15px] h-[15px] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 4L12 13 2 4"/>
+                  </svg>
+                  Get in Touch
+                </button>
+              </div>
+
+              {/* Expandable email form */}
+              <div
+                style={{
+                  maxHeight: formOpen ? '120px' : '0',
+                  opacity: formOpen ? 1 : 0,
+                  marginTop: formOpen ? '0.75rem' : '0',
+                  transition: 'max-height 0.4s cubic-bezier(0.22,1,0.36,1), opacity 0.35s ease, margin-top 0.4s ease',
+                }}
+                className="overflow-hidden max-w-md"
+              >
+                <div className="flex gap-2 flex-wrap">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => { setEmail(e.target.value); setInvalid(false) }}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    placeholder="Enter your email address"
+                    autoComplete="email"
+                    className={`flex-1 min-w-[200px] px-4 py-3 border rounded-sm text-[0.8rem] font-light text-stone-900 bg-white placeholder:text-stone-400 focus:outline-none transition-all duration-200 ${invalid ? 'border-red-500' : 'border-stone-900/20 focus:border-stone-900/60 focus:shadow-[0_0_0_2px_rgba(0,0,0,0.06)]'}`}
+                  />
+                  <button
+                    onClick={handleSend}
+                    className="px-6 py-3 bg-[#111] text-white text-[0.78rem] font-medium tracking-[0.1em] uppercase rounded-sm hover:bg-[#1a1a1a] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
+                  >
+                    Send
+                  </button>
+                </div>
               </div>
             </div>
 
