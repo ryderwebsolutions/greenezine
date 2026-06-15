@@ -21,6 +21,10 @@ build/
 *~
 .DS_Store
 
+# Large PDFs - deploy via Vercel CLI, not git
+Magazine_June.pdf
+public/Magazine_June.pdf
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
