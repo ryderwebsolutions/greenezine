@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { PageFlip } from 'page-flip'
 
 function ReaderShell({ eyebrow, title, description, action, children }) {
@@ -19,15 +19,44 @@ function ReaderShell({ eyebrow, title, description, action, children }) {
   )
 }
 
+const BUFFER = 5
+
 function LocalFlipbookReader({ pagesDir, pageCount }) {
   const containerRef = useRef(null)
   const flipRef = useRef(null)
+  const imgRefs = useRef([])
   const [page, setPage] = useState(0)
   const [ready, setReady] = useState(false)
+
+  const loadNearby = useCallback((current) => {
+    const start = Math.max(0, current - BUFFER)
+    const end = Math.min(pageCount - 1, current + BUFFER)
+    for (let i = start; i <= end; i++) {
+      const img = imgRefs.current[i]
+      if (img && !img.src) {
+        img.src = `${pagesDir}/${i + 1}.jpg`
+      }
+    }
+  }, [pagesDir, pageCount])
 
   useEffect(() => {
     const el = containerRef.current
     if (!el || flipRef.current) return
+
+    imgRefs.current = []
+    const pages = []
+
+    for (let i = 0; i < pageCount; i++) {
+      const div = document.createElement('div')
+      div.style.background = '#f3eee3'
+      const img = document.createElement('img')
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;'
+      img.alt = `Page ${i + 1}`
+      div.appendChild(img)
+      el.appendChild(div)
+      pages.push(div)
+      imgRefs.current.push(img)
+    }
 
     const pf = new PageFlip(el, {
       width: 500,
@@ -46,20 +75,19 @@ function LocalFlipbookReader({ pagesDir, pageCount }) {
       mobileScrollSupport: true,
     })
 
-    pf.loadFromImages(
-      Array.from({ length: pageCount }, (_, i) => `${pagesDir}/${i + 1}.jpg`)
-    )
-
-    pf.on('flip', (e) => setPage(e.data))
-    pf.on('init', () => setReady(true))
+    pf.loadFromHTML(pages)
+    pf.on('flip', (e) => { setPage(e.data); loadNearby(e.data) })
+    pf.on('init', () => { setReady(true); loadNearby(0) })
 
     flipRef.current = pf
 
     return () => {
       try { flipRef.current?.destroy() } catch {}
       flipRef.current = null
+      if (el) el.innerHTML = ''
+      imgRefs.current = []
     }
-  }, [pagesDir, pageCount])
+  }, [pagesDir, pageCount, loadNearby])
 
   return (
     <div className="flex flex-col">
@@ -67,7 +95,7 @@ function LocalFlipbookReader({ pagesDir, pageCount }) {
         {!ready && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-stone-900">
             <div className="h-10 w-10 animate-spin rounded-full border-2 border-stone-600 border-t-stone-300" />
-            <p className="mt-4 text-sm text-stone-400">Loading pages…</p>
+            <p className="mt-4 text-sm text-stone-400">Loading flipbook…</p>
           </div>
         )}
         <div ref={containerRef} style={{ height: '72vh', maxHeight: '840px' }} />
@@ -132,7 +160,6 @@ export function UnifiedIssueReader({ title, readerUrl, openUrl, readerType, page
               <p className="mt-2 text-sm text-stone-600">Preparing the reading canvas for {title.toLowerCase()}.</p>
             </div>
           )}
-
           <div className="relative overflow-hidden rounded-[1.3rem] border border-stone-200 bg-white shadow-[0_20px_44px_-32px_rgba(30,44,39,0.55)]" style={{ paddingBottom: '141.4%' }}>
             <iframe
               src={readerUrl}
@@ -144,7 +171,6 @@ export function UnifiedIssueReader({ title, readerUrl, openUrl, readerType, page
               onLoad={() => setLoaded(true)}
             />
           </div>
-
           {readerType === 'pdf' && (
             <p className="mt-4 text-center text-xs text-stone-500 sm:text-sm">
               Tip: on mobile, use the open button for a smoother native PDF experience.
