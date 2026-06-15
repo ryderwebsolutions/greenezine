@@ -30,7 +30,7 @@ export default function Hero() {
         {/* Publication Badge */}
         <div className="flex justify-center mb-8">
           <div className="inline-block px-4 py-1.5 bg-sage-50 border border-sage-200 rounded-full hover:border-sage-300 transition-colors">
-            <span className="text-sage-700 text-xs font-bold tracking-widest">PUBLICATION • ISSUE 04/2026</span>
+            <span className="text-sage-700 text-xs font-bold tracking-widest">PUBLICATION • ISSUE 06/2026</span>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function Hero() {
         {/* Main CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <Link
-            to="/issues/april-2026"
+            to="/issues/june-2026"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-sage-600 to-eco-600 text-white font-semibold rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             Read Latest Edition

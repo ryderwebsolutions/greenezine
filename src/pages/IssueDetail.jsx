@@ -66,6 +66,8 @@ export default function IssueDetail() {
             readerUrl={issue.readerUrl}
             openUrl={issue.openUrl}
             readerType={issue.readerType}
+            pagesDir={issue.pagesDir}
+            pageCount={issue.pageCount}
           />
         </div>
       </section>

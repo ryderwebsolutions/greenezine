@@ -183,7 +183,7 @@ export default function Advertise() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link to="/archive" className="btn-outline">Review issue archive</Link>
           <Link to="/contact" className="btn-outline">Contact the team</Link>
-          <Link to="/issues/april-2026" className="btn-primary">Read latest edition</Link>
+          <Link to="/issues/june-2026" className="btn-primary">Read latest edition</Link>
         </div>
       </section>
     </>

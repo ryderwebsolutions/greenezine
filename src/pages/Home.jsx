@@ -84,7 +84,7 @@ export default function Home() {
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link to="/issues/april-2026" className="btn-primary">
+                <Link to="/issues/june-2026" className="btn-primary">
                   Read Latest Issue
                 </Link>
                 <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-[#111] text-white text-xs font-medium tracking-[0.1em] uppercase rounded-sm shadow-[0_2px_20px_rgba(0,0,0,0.13)] hover:bg-[#1a1a1a] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200">
@@ -140,11 +140,11 @@ export default function Home() {
 
             <aside className="rounded-[1.6rem] border border-stone-200 bg-white/85 p-6 shadow-[0_24px_52px_-40px_rgba(30,44,39,0.55)] backdrop-blur sm:p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700">Latest release</p>
-              <h2 className="mt-3 text-3xl leading-tight text-stone-900 sm:text-4xl">April 2026</h2>
+              <h2 className="mt-3 text-3xl leading-tight text-stone-900 sm:text-4xl">June 2026</h2>
               <p className="mt-3 text-sm leading-7 text-stone-600 sm:text-base">
-                A publication issue focused on practical sustainability progress, climate-minded business, and modern Irish environmental leadership.
+                Our summer edition spotlighting green enterprise, environmental innovation, and sustainability stories shaping Ireland's eco-future.
               </p>
-              <Link to="/issues/april-2026" className="mt-6 inline-flex items-center text-sm font-medium text-sage-700 transition hover:text-sage-800">
+              <Link to="/issues/june-2026" className="mt-6 inline-flex items-center text-sm font-medium text-sage-700 transition hover:text-sage-800">
                 Read full issue
               </Link>
             </aside>
@@ -157,7 +157,7 @@ export default function Home() {
           <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="editorial-eyebrow">Issue releases</p>
-              <h2 className="mt-4 text-4xl text-stone-900 sm:text-5xl">January to April 2026</h2>
+              <h2 className="mt-4 text-4xl text-stone-900 sm:text-5xl">January to June 2026</h2>
             </div>
             <Link to="/archive" className="text-sm font-medium text-sage-700 transition hover:text-sage-800">
               Browse archive

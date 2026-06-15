@@ -7,7 +7,7 @@ export default function Navbar() {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Latest Edition', path: '/issues/april-2026' },
+    { label: 'Latest Edition', path: '/issues/june-2026' },
     { label: 'Archive', path: '/archive' },
     { label: 'About', path: '/about' },
     { label: 'Advertise', path: '/advertise' },
@@ -69,7 +69,7 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <Link
-            to="/issues/april-2026"
+            to="/issues/june-2026"
             className="hidden md:inline-flex items-center rounded-full bg-stone-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-sage-800"
           >
             Read Latest Issue
@@ -139,7 +139,7 @@ export default function Navbar() {
                 ))}
 
                 <Link
-                  to="/issues/april-2026"
+                  to="/issues/june-2026"
                   onClick={() => setIsOpen(false)}
                   className="mt-2 block rounded-2xl bg-stone-900 px-4 py-3 text-center font-medium text-white hover:bg-sage-800"
                 >

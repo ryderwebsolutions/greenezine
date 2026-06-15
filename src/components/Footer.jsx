@@ -24,7 +24,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">Explore</h4>
             <ul className="mt-5 space-y-3 text-sm">
               <li><Link to="/" className="text-stone-700 hover:text-sage-700">Home</Link></li>
-              <li><Link to="/issues/april-2026" className="text-stone-700 hover:text-sage-700">Latest Edition</Link></li>
+              <li><Link to="/issues/june-2026" className="text-stone-700 hover:text-sage-700">Latest Edition</Link></li>
               <li><Link to="/archive" className="text-stone-700 hover:text-sage-700">Archive</Link></li>
               <li><Link to="/about" className="text-stone-700 hover:text-sage-700">About</Link></li>
             </ul>

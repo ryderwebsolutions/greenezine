@@ -64,7 +64,7 @@ export default function Archive() {
         </div>
 
         <div className="mx-auto mt-10 max-w-7xl text-center">
-          <Link to="/issues/april-2026" className="btn-primary">
+          <Link to="/issues/june-2026" className="btn-primary">
             Read Latest Issue
           </Link>
         </div>
