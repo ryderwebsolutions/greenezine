@@ -15,12 +15,10 @@ function ArchiveCard({ issue }) {
                 className="h-full w-full object-cover"
               />
             ) : (
-              <iframe
-                src={issue.coverSrc}
-                title={`${issue.title} cover preview`}
-                loading="lazy"
-                className="h-full w-full border-0 pointer-events-none"
-              />
+              <div className="flex h-full min-h-[10rem] flex-col items-center justify-center gap-2 bg-[#edeae2] px-4 text-center">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sage-700">{issue.month} {issue.year}</span>
+                <span className="text-sm text-stone-400">PDF coming soon</span>
+              </div>
             )}
           </div>
 

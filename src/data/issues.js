@@ -43,11 +43,8 @@ export const issues = [
     description:
       'Stories on sustainable living, green communities, and real environmental action happening across Ireland.',
     readTime: '22 min',
-    coverType: 'image',
-    coverSrc: 'https://gogreenezine.com/flipbook-march/pages/1.jpg',
-    readerType: 'flipbook',
-    readerUrl: 'https://gogreenezine.com/flipbook-march/',
-    openUrl: 'https://gogreenezine.com/flipbook-march/',
+    coverType: 'coming-soon',
+    readerType: 'coming-soon',
   },
   {
     slug: 'february-2026',
@@ -58,11 +55,8 @@ export const issues = [
     description:
       'An issue focused on sustainable enterprise, cleaner energy adoption, and Irish innovation in green business.',
     readTime: '24 min',
-    coverType: 'image',
-    coverSrc: 'https://gogreenezine.com/flipbooks-february/pages/1.jpg',
-    readerType: 'flipbook',
-    readerUrl: 'https://gogreenezine.com/flipbooks-february/',
-    openUrl: 'https://gogreenezine.com/flipbooks-february/',
+    coverType: 'coming-soon',
+    readerType: 'coming-soon',
   },
   {
     slug: 'january-2026',
@@ -73,11 +67,8 @@ export const issues = [
     description:
       'Our launch issue featuring business leaders, innovators, and voices shaping Ireland\'s sustainability direction.',
     readTime: '26 min',
-    coverType: 'image',
-    coverSrc: 'https://gogreenezine.com/flipbook-january/pages/1.jpg',
-    readerType: 'flipbook',
-    readerUrl: 'https://gogreenezine.com/flipbook-january/',
-    openUrl: 'https://gogreenezine.com/flipbook-january/',
+    coverType: 'coming-soon',
+    readerType: 'coming-soon',
   },
 ]
 

@@ -2,9 +2,26 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { INSTAGRAM_URL, issues } from '../data/issues'
 
-function IssueCard({ issue }) {
-  const coverIsImage = issue.coverType === 'image'
+function IssueCover({ issue }) {
+  if (issue.coverType === 'image') {
+    return (
+      <img
+        src={issue.coverSrc}
+        alt={`${issue.title} cover`}
+        loading="lazy"
+        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
+      />
+    )
+  }
+  return (
+    <div className="flex h-full flex-col items-center justify-center gap-3 bg-[#edeae2] px-6 text-center">
+      <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sage-700">{issue.month} {issue.year}</span>
+      <span className="text-sm text-stone-400">PDF coming soon</span>
+    </div>
+  )
+}
 
+function IssueCard({ issue }) {
   return (
     <Link
       to={`/issues/${issue.slug}`}
@@ -13,22 +30,7 @@ function IssueCard({ issue }) {
     >
       <article className="flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-[0_24px_50px_-34px_rgba(33,45,39,0.45)]">
         <div className="relative aspect-[3/4] overflow-hidden bg-[#f4f0e8]">
-          {coverIsImage ? (
-            <img
-              src={issue.coverSrc}
-              alt={`${issue.title} cover`}
-              loading="lazy"
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
-            />
-          ) : (
-            <iframe
-              src={issue.coverSrc}
-              title={`${issue.title} cover preview`}
-              loading="lazy"
-              className="h-full w-full border-0 pointer-events-none"
-            />
-          )}
-
+          <IssueCover issue={issue} />
           {issue.featured && (
             <span className="absolute left-3 top-3 rounded-full bg-stone-900 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
               Latest
@@ -42,7 +44,9 @@ function IssueCard({ issue }) {
           <p className="mt-2 h-[2.8rem] overflow-hidden text-sm leading-6 text-stone-600">{issue.subtitle}</p>
           <div className="mt-4 flex items-center justify-between text-sm">
             <span className="text-stone-500">{issue.readTime} read</span>
-            <span className="font-medium text-sage-700">Open issue</span>
+            <span className="font-medium text-sage-700">
+              {issue.coverType === 'coming-soon' ? 'Coming soon' : 'Open issue'}
+            </span>
           </div>
         </div>
       </article>
