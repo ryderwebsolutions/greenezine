@@ -26,24 +26,6 @@ export default function Contact() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h2>
 
           <div className="space-y-8">
-            {/* Email */}
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                <a href="mailto:info@greenezine.com" className="text-sage-600 hover:text-sage-700 font-medium">
-                  info@greenezine.com
-                </a>
-                <p className="text-gray-600 text-sm mt-1">We respond within 24-48 hours</p>
-              </div>
-            </div>
-
             {/* Response Time */}
             <div className="flex gap-4">
               <div className="flex-shrink-0">
