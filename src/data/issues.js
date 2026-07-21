@@ -43,8 +43,12 @@ export const issues = [
     description:
       'Stories on sustainable living, green communities, and real environmental action happening across Ireland.',
     readTime: '22 min',
-    coverType: 'coming-soon',
-    readerType: 'coming-soon',
+    coverType: 'image',
+    coverSrc: '/flipbook-march/pages/1.jpg',
+    readerType: 'flipbook-local',
+    pagesDir: '/flipbook-march/pages',
+    pageCount: 104,
+    openUrl: '/Magazine_March.pdf',
   },
   {
     slug: 'february-2026',
@@ -55,8 +59,12 @@ export const issues = [
     description:
       'An issue focused on sustainable enterprise, cleaner energy adoption, and Irish innovation in green business.',
     readTime: '24 min',
-    coverType: 'coming-soon',
-    readerType: 'coming-soon',
+    coverType: 'image',
+    coverSrc: '/flipbook-february/pages/1.jpg',
+    readerType: 'flipbook-local',
+    pagesDir: '/flipbook-february/pages',
+    pageCount: 147,
+    openUrl: '/Magazine_February.pdf',
   },
   {
     slug: 'january-2026',
@@ -67,8 +75,12 @@ export const issues = [
     description:
       'Our launch issue featuring business leaders, innovators, and voices shaping Ireland\'s sustainability direction.',
     readTime: '26 min',
-    coverType: 'coming-soon',
-    readerType: 'coming-soon',
+    coverType: 'image',
+    coverSrc: '/flipbook-january/pages/1.jpg',
+    readerType: 'flipbook-local',
+    pagesDir: '/flipbook-january/pages',
+    pageCount: 36,
+    openUrl: '/Magazine_January.pdf',
   },
 ]
 
