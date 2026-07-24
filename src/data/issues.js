@@ -6,9 +6,9 @@ export const issues = [
     month: 'July',
     year: 2026,
     title: 'July 2026 Edition',
-    subtitle: 'Green Enterprise and Sustainability in Action',
+    subtitle: 'Sustainable Building and Home Improvement Across Ireland',
     description:
-      'Our latest issue covering green enterprise, sustainability leadership, and environmental progress across Ireland.',
+      'Our latest issue spotlights the builders, tradespeople, and specialists shaping greener Irish homes — from damp-proofing, insulation, and solar to accessible, sensory-friendly design.',
     readTime: '24 min',
     coverType: 'image',
     coverSrc: '/flipbook-july/pages/1.jpg',
