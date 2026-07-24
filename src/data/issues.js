@@ -2,6 +2,23 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/greenzineireland/'
 
 export const issues = [
   {
+    slug: 'july-2026',
+    month: 'July',
+    year: 2026,
+    title: 'July 2026 Edition',
+    subtitle: 'Green Enterprise and Sustainability in Action',
+    description:
+      'Our latest issue covering green enterprise, sustainability leadership, and environmental progress across Ireland.',
+    readTime: '24 min',
+    coverType: 'image',
+    coverSrc: '/flipbook-july/pages/1.jpg',
+    readerType: 'flipbook-local',
+    pagesDir: '/flipbook-july/pages',
+    pageCount: 171,
+    openUrl: '/Magazine_July.pdf',
+    featured: true,
+  },
+  {
     slug: 'june-2026',
     month: 'June',
     year: 2026,
@@ -16,7 +33,6 @@ export const issues = [
     pagesDir: '/flipbook-june/pages',
     pageCount: 169,
     openUrl: '/Magazine_June.pdf',
-    featured: true,
   },
   {
     slug: 'april-2026',
