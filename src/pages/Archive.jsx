@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { issues } from '../data/issues'
 
+const latestIssue = issues.find((issue) => issue.featured) ?? issues[0]
+
 function ArchiveCard({ issue }) {
   return (
     <Link to={`/issues/${issue.slug}`} className="group block h-full" aria-label={`Open ${issue.title}`}>
@@ -62,7 +64,7 @@ export default function Archive() {
         </div>
 
         <div className="mx-auto mt-10 max-w-7xl text-center">
-          <Link to="/issues/june-2026" className="btn-primary">
+          <Link to={`/issues/${latestIssue.slug}`} className="btn-primary">
             Read Latest Issue
           </Link>
         </div>

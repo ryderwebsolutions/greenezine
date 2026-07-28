@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { issues } from '../data/issues'
+
+const latestIssue = issues.find((issue) => issue.featured) ?? issues[0]
 
 const packages = [
   {
@@ -183,7 +186,7 @@ export default function Advertise() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link to="/archive" className="btn-outline">Review issue archive</Link>
           <Link to="/contact" className="btn-outline">Contact the team</Link>
-          <Link to="/issues/june-2026" className="btn-primary">Read latest edition</Link>
+          <Link to={`/issues/${latestIssue.slug}`} className="btn-primary">Read latest edition</Link>
         </div>
       </section>
     </>
